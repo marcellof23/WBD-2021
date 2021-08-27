@@ -1,0 +1,18 @@
+.header {
+  position: fixed;
+  color: black;
+  background-color: white;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+
+a {
+  text-decoration: none;
+}
+.header-text {
+  text-align: center;
+  width: 380px;
+}
