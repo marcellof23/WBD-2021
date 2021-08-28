@@ -1,31 +1,46 @@
-import data from "./data.js";
-import { convertToSlug } from "./helper.js";
-
-
 const asideContent = (book) =>  `
   <div class="aside-container">
     <p class="aside-nama">${book.judul}</p>
-    <p class="aside-harga">${book.primer.harga}</p>
+    <p class="aside-harga">Rp ${book.primer.harga},-</p>
   </div>
 `;
 
+const currURL = () => {
+  let str = ''
+  if(window.location.hostname != '') {
+    str = ""
+  }
+  else {
+    str = window.location.pathname.replace("index.html", "");
+  }
+  
+  return str;
+}
+
 const bookCard = (book) =>  `
   <div class="book-container">
-    <a href="/detail.html?${convertToSlug(book.judul)}">
+    
       <div class="book-card">
         <div class="book-card__cover">
           <div class="book-card__book">
             <div class="book-card__book-front">
               <img class="book-card__img" src=${book.primer['url-foto']} />
             </div>
-            <div class="book-card__book-back">
-            </div>
-            <div class="book-card__book-side">
-            </div>
+            <div class="book-card__book-back"></div>
+            <div class="book-card__book-side"></div>
+                     
           </div>
+          <div class="book-button-container">
+            <a class="book-a" href="${currURL()}/detail.html?${convertToSlug(book.judul)}">
+              <div class="book-button">
+                View
+              </div>
+            </a>  
+          </div>  
         </div>
+       
       </div>
-    </a>
+   
   </div> 
 `;
 

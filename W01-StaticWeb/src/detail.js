@@ -1,6 +1,3 @@
-import data from "./data.js";
-import {convertToSlug} from "./helper.js"
-
 const detailContent = (book) =>  
 `
   <div class="card-detail-container">

@@ -1,4 +1,4 @@
-export const convertToSlug = (string) => {
+const convertToSlug = (string) => {
   return string
     .toString()
     .trim()
