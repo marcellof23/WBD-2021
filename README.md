@@ -8,9 +8,17 @@ Project ini sebuah aplikasi dengan HTML, CSS dan JS sederhana yang berisi :
 * Jika sebuah produk pada halaman daftar produk diklik, muncul halaman kedua yang berisii nama, harga, foto dan deskripsi produk
 
 ## Screenshots
-![Halaman Utama](./W01-StaticWeb/assets/ss1.jpg)
-![Halaman Detail 1](./W01-StaticWeb/assets/ss2.jpg)
-![Halaman Detail 2](./W01-StaticWeb/assets/ss3.jpg)
+
+Potongan gambar halaman utama
+
+![Halaman Utama](./W01-StaticWeb/assets/ss1.png)
+
+Potongan gambar detail pertama
+![Halaman Detail 1](./W01-StaticWeb/assets/ss2.png)
+
+Potongan gambar detail kedua
+
+![Halaman Detail 2](./W01-StaticWeb/assets/ss3.png)
 ****
 ## Setup
 Alternatif 1
