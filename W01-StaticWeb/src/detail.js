@@ -1,3 +1,16 @@
+const descriptionContent = (book) => {
+  let outputDesc = ""
+  for (const b in book.deskripsi)
+  {
+    console.log(book.deskripsi);
+    if(book.deskripsi[b] !== undefined)
+    {
+      outputDesc += `<div class="card-detail-desc"> ${b} :  ${book.deskripsi[b]}</div>`
+    }
+  } 
+  return outputDesc
+}
+
 const detailContent = (book) =>  
 `
   <div class="card-detail-container">
@@ -7,9 +20,7 @@ const detailContent = (book) =>
     <div class="card-detail-text-container">
       <div class="card-detail-nama"> ${(book.judul).toUpperCase()}</div>
       <div class="card-detail-desc-container">
-        <div class="card-detail-desc"> Penulis :  ${book.deskripsi.penulis}</div>
-        <div class="card-detail-desc"> Penerbit : ${book.deskripsi.penerbit}</div>
-        <div class="card-detail-desc"> Penyunting : ${book.deskripsi.penyunting}</div>
+        ${descriptionContent(book)}
       </div>
       <div class="card-detail-harga">${book.primer.harga}</div>
     </div>
