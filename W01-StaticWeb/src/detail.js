@@ -14,15 +14,17 @@ const descriptionContent = (book) => {
 const detailContent = (book) =>  
 `
   <div class="card-detail-container">
-    <div class="card-detail-image-container">
-      <img class="card-detail-image" src=${book.primer["url-foto"]}></img>
-    </div>
-    <div class="card-detail-text-container">
-      <div class="card-detail-nama"> ${(book.judul).toUpperCase()}</div>
-      <div class="card-detail-desc-container">
-        ${descriptionContent(book)}
+    <div class="card-detail-container-inner">
+      <div class="card-detail-image-container">
+        <img class="card-detail-image" src=${book.primer["url-foto"]}></img>
       </div>
-      <div class="card-detail-harga">${book.primer.harga}</div>
+      <div class="card-detail-text-container">
+        <div class="card-detail-nama"> ${(book.judul).toUpperCase()}</div>
+        <div class="card-detail-desc-container">
+          ${descriptionContent(book)}
+        </div>
+        <div class="card-detail-harga">Rp${book.primer.harga},-</div>
+      </div>
     </div>
   </div>
 `;

@@ -20,14 +20,30 @@ html {
   align-items: center;
   justify-content: center;
   padding-right: 25%;
+  background-color: #323437;
+}
+.card-detail-container-inner {
+  border: 2px solid white;
+  width: 85%;
+  padding-left: 10%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .card-detail-nama {
+  color: #e2b714;
   font-size: 42px;
   font-weight: 600;
 }
 
+img.card-detail-image {
+  max-height: 400px;
+}
+
 .card-detail-desc-container {
+  color: #d1d0c5;
   margin-top: 15%;
 }
 .card-detail-desc {
@@ -38,9 +54,9 @@ html {
   display: flex;
   position: relative;
   flex-direction: column;
-  align-items: flex-start;
   margin-left: 15%;
-  height: 50%;
+  align-items: flex-start;
+  height: 75%;
 }
 
 .card-detail-harga {

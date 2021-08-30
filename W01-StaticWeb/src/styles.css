@@ -24,7 +24,7 @@ html {
   background-color: #010108;
 }
 
-img {
+img.book-card__img {
   width: 70%;
 }
 

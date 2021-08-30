@@ -25,4 +25,4 @@ Alternatif 1
 - Double klik file html 
 
 Alternatif 2
-- Install live server pada visual studio code, lalu klik kanan pada file html dan pilih open with live server.
+- Install live server pada visual studio code, Open folder project ini pada VScode (W01-StaticWeb bukan parentnya) lalu klik kanan pada file html dan pilih open with live server.
