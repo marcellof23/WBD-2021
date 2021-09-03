@@ -19,49 +19,49 @@ const currURL = () => {
 
 const bookCard = (book) =>  `
   <div class="book-container">
-    
-      <div class="book-card">
-        <div class="book-card__cover">
-          <div class="book-card__book">
-            <div class="book-card__book-front">
-              <img class="book-card__img" src=${book.primer['url-foto']} />
-            </div>
-            <div class="book-card__book-back"></div>
-            <div class="book-card__book-side"></div>
-                     
+    <div class="book-card">
+      <div class="book-card__cover">
+        <div class="book-card__book">
+          <div class="book-card__book-front">
+            <img class="book-card__img" src=${book.primer['url-foto']} />
           </div>
-          <div class="book-button-container">
-            <a class="book-a" href="${currURL()}/detail.html?${convertToSlug(book.judul)}">
-              <div class="book-button">
-                View
-              </div>
-            </a>  
-          </div>  
+          <div class="book-card__book-back"></div>
+          <div class="book-card__book-side"></div>            
         </div>
-       
+        <div class="book-button-container">
+          <a class="book-a" href="${currURL()}/detail.html?${convertToSlug(book.judul)}">
+            <div class="book-button">
+              View
+            </div>
+          </a>  
+        </div>  
       </div>
-   
+    </div>
   </div> 
 `;
 
-const body = document.querySelector(".home-container");
-const aside = document.querySelector(".aside-class");
+const mainHome = () => {
+  const bodyHome = document.querySelector(".home-container");
+  const aside = document.querySelector(".aside-class");
+  
+  let bodyHTML = '';
+  data.books.forEach((book) => {
+    bodyHTML += bookCard(book);
+  });
+  
+  let asideHTML = '';
+  data.books.forEach((book) => {
+    asideHTML += asideContent(book);
+  });
+  
+  aside.innerHTML = asideHTML;
 
-let bodyHTML = '';
-data.books.forEach((book) => {
-  bodyHTML += bookCard(book);
-});
+  if(auth()) {
+    bodyHome.innerHTML = bodyHTML;
+  }
+  
+}
 
-let asideHTML = '';
-data.books.forEach((book) => {
-  console.log(book)
-  asideHTML += asideContent(book);
-});
-
-aside.innerHTML = asideHTML;
-body.innerHTML = bodyHTML;
-
-
-
+mainHome();
 
 

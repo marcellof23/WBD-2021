@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Book Site</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <!-- import styling -->
+     <link rel="stylesheet" type="text/css" href="src/styles/login.css" />
+ 
+     <!-- import script -->
+     <script src="src/login.js" defer></script>
+     <script src="src/auth.js" defer></script>
+
+  </head>
+
+  <body>
+    <form id="login-form" onsubmit="return login()">
+      <h1>LOGIN</h1>
+      <input type="email" placeholder="Email" id="user-email" required/>
+      <input type="password" placeholder="Password" id="user-pass" required/>
+      <input type="submit" value="Sign In"/>
+    </form>
+  </body> 
+  
+</html>

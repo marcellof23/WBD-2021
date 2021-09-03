@@ -40,4 +40,7 @@ data.books.forEach((book) => {
   }
 });
 
-body_detail.innerHTML = bodyDetailHTML;
+if(auth()) {
+  console.log("HEI");
+  body_detail.innerHTML = bodyDetailHTML;
+}
