@@ -1,12 +1,16 @@
-const homeURL = () => {
-  const str = window.location.pathname.replace("detail.html", "index.html");
-  console.log(window.location.hostname);
+const targetURL = (pathname) => {
+  const str = window.location.pathname.replace(
+    window.location.pathname,
+    pathname
+  );
+  console.log(window.location.pathname);
   return str;
-}
+};
 
-const header =  `
+const header = `
   <div class="header">
-     <a class="header-text" href="${homeURL()}">Home</a>
+     <a class="header-text" href="${targetURL("index.html")}">Home</a>
+     <a class="header-text" href="${targetURL("cart.html")}">Cart</a>
   </div>
 `;
 

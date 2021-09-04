@@ -22,6 +22,7 @@ html {
   padding-right: 25%;
   background-color: #323437;
 }
+
 .card-detail-container-inner {
   border: 2px solid white;
   width: 85%;
@@ -46,6 +47,7 @@ img.card-detail-image {
   color: #d1d0c5;
   margin-top: 15%;
 }
+
 .card-detail-desc {
   font-size: 24px;
 }
@@ -56,6 +58,7 @@ img.card-detail-image {
   flex-direction: column;
   margin-left: 15%;
   align-items: flex-start;
+  color: white;
   height: 75%;
 }
 
@@ -67,6 +70,22 @@ img.card-detail-image {
   font-size: 20px;
   font-weight: 700;
   border-radius: 4px;
+  position: absolute;
+  margin-top: 10%;
+  bottom: 0px;
+  padding: 20px 30px 20px 30px;
+}
+
+.card-detail-button {
+  background-color: white;
+  min-width: 200px;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-bottom: 25%;
   position: absolute;
   bottom: 0px;
   padding: 20px 30px 20px 30px;

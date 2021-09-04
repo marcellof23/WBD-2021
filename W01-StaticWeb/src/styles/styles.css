@@ -208,3 +208,11 @@ main {
   justify-content: center;
   width: 100%;
 }
+
+.none {
+  display: none;
+}
+
+.show {
+  display: visible;
+}

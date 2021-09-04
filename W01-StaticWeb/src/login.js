@@ -14,7 +14,7 @@ function login(){
   xhr.onload = function() {
     if (parse("ajaxResponse",this.response) == "OK") { 
       let emailCookie ="email-cookie="+ email;
-      let passCookie = "pass-cookie="+password; 
+      let passCookie = "pass-cookie="+ password; 
       document.cookie = passCookie;
       document.cookie = emailCookie;
       location.href = "/"; 

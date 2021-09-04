@@ -1,20 +1,14 @@
-function getCookie(name) {
-  const value = `; ${document.cookie}`;
-  const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
 function parse(name, str) {
   const value = `; ${str}`;
   const parts = value.split(`; ${name}=`);
-  if (parts.length === 2) return parts.pop().split(';').shift();
+  if (parts.length === 2) return parts.pop().split(";").shift();
 }
 
-async function auth(_cb){
+async function auth(_cb) {
   // (A) GET EMAIL + PASSWORD
   var data = new FormData();
-  data.append('email-cookie', getCookie("email-cookie"));
-  data.append('pass-cookie', getCookie("pass-cookie"));
+  data.append("email-cookie", parse("email-cookie", document.cookie));
+  data.append("pass-cookie", parse("pass-cookie", document.cookie));
 
   // (B) AJAX REQUEST
   var xhr = new XMLHttpRequest();
@@ -23,15 +17,13 @@ async function auth(_cb){
   xhr.send(data);
 
   xhr.onload = function _cb() {
-    console.log("woi");
-    console.log(this.response);
-    if (parse("authResponse",this.response) == "OK") {
+    if (parse("authResponse", this.response) == "OK") {
+      const body = document.querySelector("body");
+      body.classList.remove("none");
       return true;
-    }
-    else {
+    } else {
       location.href = "/login.html";
       return false;
     }
   };
-
 }

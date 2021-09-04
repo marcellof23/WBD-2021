@@ -41,9 +41,13 @@ const bookCard = (book) =>  `
 `;
 
 const mainHome = () => {
+  
   const bodyHome = document.querySelector(".home-container");
+  const body = document.querySelector("body");
   const aside = document.querySelector(".aside-class");
   
+  body.classList.add("none");
+
   let bodyHTML = '';
   data.books.forEach((book) => {
     bodyHTML += bookCard(book);
