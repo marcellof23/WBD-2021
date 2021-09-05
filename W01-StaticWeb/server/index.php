@@ -1,35 +1,57 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 
-// (A) USER & PASSWORD CONVERTED FROM user.json FILE...
-$users = file_get_contents("user.json");
-$user = json_decode($users, true);
+//  USER & PASSWORD CONVERTED FROM user.json FILE...
+$user_file = file_get_contents("user.txt");
+$usr_array = explode("\n", $user_file);
 
-// (B) CHECK USER & PASSWORD
+$usrs = [];
+$usr_email = [];
+$usr_pass = [];
+foreach ($usr_array as $usr) {
+    $usr_cred = explode(":", $usr);
+    array_push($usr_email, $usr_cred[0]);
+    array_push($usr_pass, $usr_cred[1]);
+}
+
+$array_user = array_combine($usr_email, $usr_pass);
+
+//  CHECK USER & PASSWORD
 $pass = 0;
 
 if (isset($_POST['email'])) {
-    $pass = $_POST['email'] == $user['email'];
+    if (isset($array_user[$_POST['email']])) {
+        $pass = 1;
+    } else {
+        $pass = 0;
+    }
+
 }
 
-if ($pass) {$pass = $_POST['password'] == $user['password'];}
+if ($pass) {
+    if ($_POST['password'] == $array_user[$_POST['email']]) {
+        $pass = 1;
+    } else {
+        $pass = 0;
+    }
+}
 
-// (C) START SESSION IF VALID USER
+// START SESSION IF VALID USER
 if ($pass) {
     session_start();
 }
 
-// (D) RESPOND TO AJAX
+// RESPOND TO AJAX
 if ($pass) {
     echo "ajaxResponse=OK; ";
 } else {
     echo "error=true; ";
 }
 
-if (isset($_POST['email-cookie']) && $_POST['email-cookie'] == $user['email'] && isset($_POST['pass-cookie']) && $_POST['pass-cookie'] == $user['password']) {
+if (isset($_POST['email-cookie']) && isset($array_user[$_POST['email-cookie']]) && isset($_POST['pass-cookie']) && $_POST['pass-cookie'] == $array_user[$_POST['email-cookie']]) {
     echo "authResponse=OK; ";
 }
 
-/* (F) TO LOGOFF
+/* TO LOGOFF
  * unset($_SESSION['user']);
  */
