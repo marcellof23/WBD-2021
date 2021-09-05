@@ -1,0 +1,29 @@
+.header {
+  position: fixed;
+  color: white;
+  background-color: black;
+  width: 100vw;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-text {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  margin-left: 4%;
+}

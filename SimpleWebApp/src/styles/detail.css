@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+}
+
+.card-detail-container {
+  padding-left: 10%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 25%;
+  background-color: #323437;
+}
+
+.card-detail-container-inner {
+  border: 2px solid white;
+  width: 85%;
+  padding-left: 10%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-detail-nama {
+  color: #e2b714;
+  font-size: 42px;
+  font-weight: 600;
+}
+
+img.card-detail-image {
+  max-height: 400px;
+}
+
+.card-detail-desc-container {
+  color: #d1d0c5;
+  margin-top: 15%;
+  height: 200px;
+}
+
+.card-detail-desc {
+  font-size: 24px;
+}
+
+.card-detail-text-container {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  margin-left: 15%;
+  align-items: flex-start;
+  color: white;
+  height: 600px;
+}
+
+.card-detail-harga {
+  background-color: red;
+  min-width: 200px;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-top: 10%;
+  padding: 20px 30px 20px 30px;
+}
+
+.card-detail-button {
+  background-color: white;
+  min-width: 200px;
+  text-align: center;
+  color: black;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 20px 30px 20px 30px;
+}
+
+.card-detail-button:hover {
+  background-color: black;
+  color: white;
+}
