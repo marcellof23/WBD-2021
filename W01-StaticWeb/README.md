@@ -2,27 +2,41 @@
 # Project Name
 > Tugas 1 WBD 2021
 
-## General info
-Project ini sebuah aplikasi dengan HTML, CSS dan JS sederhana yang berisi : 
-* Sebuah halaman yang berisi daftar produk barang yang menampilkan nama, harga, dan thumbnail produk.
-* Jika sebuah produk pada halaman daftar produk diklik, muncul halaman kedua yang berisii nama, harga, foto dan deskripsi produk
+## Reminder
+Jika backend tidak dinyalakan, frontend akan berwarna putih 
 
+****
+
+## Requirements 
+- HTML
+- CSS
+- Javascript
+- PHP
+
+****
+  
+## Setup
+### Frontend
+- Install live server pada visual studio code, Open folder project ini pada VScode (W01-StaticWeb bukan parentnya) lalu klik kanan pada file html dan pilih open with live server.'
+  
+### Backend
+- Untuk backend cukup install PHP, lalu nyalakan backend dengan cd server, ketik command php -S localhost:9000 index.php.
+
+****
 ## Screenshots
+
+Potongan gambar halaman login
+
+![Halaman Login](./screenshot/ss0.png)
 
 Potongan gambar halaman utama
 
-![Halaman Utama](./assets/ss1.png)
+![Halaman Utama](./screenshot/ss1.png)
 
-Potongan gambar detail pertama
-![Halaman Detail 1](./assets/ss2.png)
+Potongan gambar halaman detail
 
-Potongan gambar detail kedua
+![Halaman Detail](./screenshot/ss2.png)
 
-![Halaman Detail 2](./assets/ss3.png)
-****
-## Setup
-Alternatif 1
-- Double klik file html 
+Potongan gambar halaman cart
 
-Alternatif 2
-- Install live server pada visual studio code, Open folder project ini pada VScode (W01-StaticWeb bukan parentnya) lalu klik kanan pada file html dan pilih open with live server.
+![Halaman Cart](./screenshot/ss3.png)
