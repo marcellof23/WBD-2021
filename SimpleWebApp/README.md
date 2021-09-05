@@ -3,7 +3,8 @@
 > Tugas 1 WBD 2021
 
 ## Reminder
-Jika backend tidak dinyalakan, frontend akan berwarna putih 
+Jika backend tidak dinyalakan, frontend akan berwarna putih
+
 
 ****
 
@@ -23,6 +24,11 @@ Jika backend tidak dinyalakan, frontend akan berwarna putih
 - Untuk backend cukup install PHP, lalu nyalakan backend dengan cara : 
 -  cd server 
 -  ketik command php -S localhost:9000 index.php
+### Frontend
+- Cara login : 
+- Pilih salah satu key value username dan password, contoh : 
+- Username : john@doe.com
+- Password : 1
 
 ****
 ## Screenshots
