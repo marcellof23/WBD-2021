@@ -1,6 +1,42 @@
-const cartContent = () => `
+const removeCart = (id) => {
+  Array.prototype.remove = function (value) {
+    for (var i = this.length; i--; ) {
+      if (this[i] == value) {
+        this.splice(i, 1);
+      }
+    }
+  };
+
+  let strCookie = parse("cart-cookie", document.cookie);
+  let arrCookie = [];
+  if (strCookie != undefined) {
+    arrCookie = strCookie.split(",");
+  }
+  console.log(id);
+  arrCookie.remove(id - 1);
+
+  let cartCookie = "cart-cookie=" + arrCookie;
+  if (arrCookie != undefined) {
+    document.cookie = cartCookie;
+  }
+
+  if (arrCookie.length == 0) {
+    document.cookie = cartCookie + ";max-age=0";
+    location.reload();
+  }
+};
+
+const cartContent = (cart, occ) => `
     <div class="cart-container">
-      Tes
+      <div class="cart-img-container">
+        <img class="cart-img" src="${cart.primer["url-foto"]}"></img>
+      </div>
+      <div class="cart-description">
+        <div class="cart-judul">${cart.judul}</div>
+        <div class="cart-occ">${cart.primer.harga}</div>
+        <div class="cart-occ">Jumlah : ${occ}</div>
+        <div class="cart-delete" onclick="removeCart(${cart.id})">Remove from Cart</div>
+      </div>
     </div>
 `;
 
@@ -9,26 +45,25 @@ const mainCart = () => {
 
   const body = document.querySelector("body");
 
-  const div0 = document.createElement("div");
-
   body.classList.add("none");
 
   let strCookie = parse("cart-cookie", document.cookie);
   let arrCookie = [];
+  let ArrUnique = [];
   if (strCookie != undefined) {
     arrCookie = strCookie.split(",");
-    //arrCookie.push(data.books[detailContent.state.currKey].id);
+    ArrUnique = arrCookie.filter(onlyUnique);
   } else {
-    //arrCookie.push(data.books[detailContent.state.currKey].id);
   }
 
   let bodyCartHTML = "";
 
-  arrCookie.forEach((cart, i) => {
-    bodyCartHTML += cartContent(cart);
+  ArrUnique.forEach((cart, i) => {
+    bodyCartHTML += cartContent(
+      data.books[Number(cart)],
+      countOccurrences(arrCookie, cart)
+    );
   });
-
-  // bodyCartHTML += cartContent();
 
   if (auth()) {
     body_cart.innerHTML = bodyCartHTML;

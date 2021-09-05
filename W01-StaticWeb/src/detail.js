@@ -21,8 +21,7 @@ const detailContent = function _detailContent(book, i) {
           <div class="card-detail-desc-container">
             ${descriptionContent(book)}
           </div>
-          <div class="card-detail-button">Add to Cart
-          </div>
+          <div class="card-detail-button">Add to Cart</div>
           <div class="card-detail-harga">Rp${book.primer.harga},-</div>
         </div>
       </div>
@@ -35,13 +34,15 @@ detailContent.state = {
   currKey: 0,
   changeCartState: () => {
     setState(() => {
+      ``;
       let strCookie = parse("cart-cookie", document.cookie);
       let arrCookie = [];
       if (strCookie != undefined) {
         arrCookie = strCookie.split(",");
-        arrCookie.push(data.books[detailContent.state.currKey].id);
+        console.log(detailContent.state.currKey - 1);
+        arrCookie.push(data.books[detailContent.state.currKey].id - 1);
       } else {
-        arrCookie.push(data.books[detailContent.state.currKey].id);
+        arrCookie.push(data.books[detailContent.state.currKey].id - 1);
       }
 
       let cartCookie = "cart-cookie=" + arrCookie;

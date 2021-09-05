@@ -1,15 +1,11 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 
-// (A) USER & PASSWORD SHOULD BE KEPT SAFELY IN A DATABASE...
-$user = [
-    "name" => "John Doe",
-    "email" => "john@doe.com",
-    "password" => "1",
-];
+// (A) USER & PASSWORD CONVERTED FROM user.json FILE...
+$users = file_get_contents("user.json");
+$user = json_decode($users, true);
 
 // (B) CHECK USER & PASSWORD
-
 $pass = 0;
 
 if (isset($_POST['email'])) {
@@ -21,10 +17,6 @@ if ($pass) {$pass = $_POST['password'] == $user['password'];}
 // (C) START SESSION IF VALID USER
 if ($pass) {
     session_start();
-    $_SESSION['user'] = [
-        "name" => $user['name'],
-        "email" => $user['email'],
-    ];
 }
 
 // (D) RESPOND TO AJAX

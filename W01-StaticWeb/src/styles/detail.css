@@ -46,6 +46,7 @@ img.card-detail-image {
 .card-detail-desc-container {
   color: #d1d0c5;
   margin-top: 15%;
+  height: 200px;
 }
 
 .card-detail-desc {
@@ -59,7 +60,7 @@ img.card-detail-image {
   margin-left: 15%;
   align-items: flex-start;
   color: white;
-  height: 75%;
+  height: 600px;
 }
 
 .card-detail-harga {
@@ -70,9 +71,7 @@ img.card-detail-image {
   font-size: 20px;
   font-weight: 700;
   border-radius: 4px;
-  position: absolute;
   margin-top: 10%;
-  bottom: 0px;
   padding: 20px 30px 20px 30px;
 }
 
@@ -85,8 +84,5 @@ img.card-detail-image {
   font-size: 20px;
   font-weight: 700;
   border-radius: 4px;
-  margin-bottom: 25%;
-  position: absolute;
-  bottom: 0px;
   padding: 20px 30px 20px 30px;
 }
