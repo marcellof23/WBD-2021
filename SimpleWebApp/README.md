@@ -20,7 +20,9 @@ Jika backend tidak dinyalakan, frontend akan berwarna putih
 - Install live server pada visual studio code, Open folder project ini pada VScode (SimpleWebApp bukan parentnya) lalu klik kanan pada file html dan pilih open with live server.'
   
 ### Backend
-- Untuk backend cukup install PHP, lalu nyalakan backend dengan cd server, ketik command php -S localhost:9000 index.php.
+- Untuk backend cukup install PHP, lalu nyalakan backend dengan cara : 
+-  cd server 
+-  ketik command php -S localhost:9000 index.php
 
 ****
 ## Screenshots
