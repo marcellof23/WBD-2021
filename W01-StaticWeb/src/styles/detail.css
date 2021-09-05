@@ -86,3 +86,8 @@ img.card-detail-image {
   border-radius: 4px;
   padding: 20px 30px 20px 30px;
 }
+
+.card-detail-button:hover {
+  background-color: black;
+  color: white;
+}
